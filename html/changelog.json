@@ -1,0 +1,22 @@
+[
+    {
+        "time": "2026-04-05 15:00",
+        "desc": "<ul><li>Phiên bản đầu tiên</li></ul>"
+    },
+    {
+        "time": "2026-04-06 09:05",
+        "desc": "<ul><li>Cập nhật lỗi hiển thị trạng thái xe</li></ul>"
+    },
+    {
+        "time": "2026-04-06 16:09",
+        "desc": "<ul><li>Hỗ trợ app chính chủ duy trì kết nối với xe, hạn chế tình trạng app bị văng.</li><li>Chỉ cho phép kết nối xe đã pair bằng app DatBike chính chủ, chặn việc kết nối xe lạ.</li><li>Tự động kết nối lại khi mất kết nối và lấy dữ liệu nền không cần mở app.</li></ul>"
+    },
+    {
+        "time": "2026-04-07 16:01",
+        "desc": "<ul><li>Đồng bộ đồng hồ của xe</li><li>Sửa lỗi thoát trên một số thiết bị</li><li>Sửa lỗi không thấy xe khi quét thiết bị</li><li>Giảm tiêu hao pin thiết bị</li></ul>"
+    },
+    {
+        "time": "2026-04-09 11:36",
+        "desc": "<ul><li>Sửa lỗi không thấy xe khi quét thiết bị. Cải thiện tần suất quét dữ liệu khi chạy nền để thu thập chính xác hơn.</li></ul>"
+    }
+]

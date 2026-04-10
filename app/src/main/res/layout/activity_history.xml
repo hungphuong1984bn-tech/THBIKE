@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F1117"
+    android:fillViewport="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="#161B27"
+            android:paddingHorizontal="16dp">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Quay lại"
+                android:src="@drawable/ic_back"
+                android:tint="#FFFFFF" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="sans-serif-medium"
+                android:text="Lịch sử &amp; Biểu đồ"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/tv_record_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:text="-- bản ghi"
+                android:textColor="#888EA8"
+                android:textSize="12sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="12dp"
+            android:background="#1A1F2E"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="🕒 Chọn mốc thời gian"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày"
+                        android:textColor="#888EA8"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_select_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:text="--/--/----"
+                        android:textAlignment="center"
+                        android:textColor="#61AFEF"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Từ giờ"
+                        android:textColor="#888EA8"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_select_start_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:text="00:00"
+                        android:textAlignment="center"
+                        android:textColor="#E5C07B"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đến giờ"
+                        android:textColor="#888EA8"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_select_end_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="8dp"
+                        android:text="Hiện tại"
+                        android:textAlignment="center"
+                        android:textColor="#98C379"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginHorizontal="12dp"
+            android:orientation="vertical"
+            android:background="#1A1F2E"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🌡 Biểu đồ Nhiệt độ (°C)"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="8dp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_temp"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_balreg" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#FF6B6B"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="BalReg" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_fet" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#FFA500"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="FET" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_pin1" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#4ECDC4"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Pin1" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_pin2" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#95E1D3"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Pin2" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="2dp">
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_pin3" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#A8E6CF"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Pin3" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_pin4" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#DCEDC1"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Pin4" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_motor" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#C678DD"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Motor" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="horizontal"
+                    android:id="@+id/legend_ctrl" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="10dp" android:layout_height="10dp" android:background="#E06C75"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Ctrl" android:textColor="#CCCCCC" android:textSize="10sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="12dp"
+            android:orientation="vertical"
+            android:background="#1A1F2E"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚡ Biểu đồ Điện &amp; Tốc độ"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="8dp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_power"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginEnd="10dp"
+                    android:id="@+id/legend_voltage" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="12dp" android:layout_height="12dp" android:background="#61AFEF"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Điện áp (V)" android:textColor="#CCCCCC" android:textSize="11sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginEnd="10dp"
+                    android:id="@+id/legend_current" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="12dp" android:layout_height="12dp" android:background="#E5C07B"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Dòng (A)" android:textColor="#CCCCCC" android:textSize="11sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginEnd="10dp"
+                    android:id="@+id/legend_speed" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="12dp" android:layout_height="12dp" android:background="#98C379"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Tốc độ (km/h)" android:textColor="#CCCCCC" android:textSize="11sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/legend_soc" android:clickable="true" android:focusable="true"
+                    android:background="?attr/selectableItemBackground" android:padding="4dp">
+                    <View android:layout_width="12dp" android:layout_height="12dp" android:background="#56B6C2"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="SOC (%)" android:textColor="#CCCCCC" android:textSize="11sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="vertical"
+            android:background="#1A1F2E"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔋 Biểu đồ Cell Pin (V) — Min / Max / Lệch"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="8dp" />
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_cells"
+                android:layout_width="match_parent"
+                android:layout_height="220dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginEnd="10dp" android:padding="4dp">
+                    <View android:layout_width="12dp" android:layout_height="12dp" android:background="#98C379"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Vmax" android:textColor="#CCCCCC" android:textSize="11sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginEnd="10dp" android:padding="4dp">
+                    <View android:layout_width="12dp" android:layout_height="12dp" android:background="#FF6B6B"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Vmin" android:textColor="#CCCCCC" android:textSize="11sp"/>
+                </LinearLayout>
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:padding="4dp">
+                    <View android:layout_width="12dp" android:layout_height="12dp" android:background="#E5C07B"
+                        android:layout_gravity="center_vertical" android:layout_marginEnd="4dp"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Lệch (Diff)" android:textColor="#CCCCCC" android:textSize="11sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="* Min/Max lấy từ danh sách cell tại từng thời điểm ghi log"
+                android:textColor="#666A80"
+                android:textSize="10sp"
+                android:layout_marginTop="4dp"/>
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:visibility="visible" />
+
+    </LinearLayout>
+</ScrollView>

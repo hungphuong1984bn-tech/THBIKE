@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:orientation="vertical">
+
+    <!-- ========== HEADER (giống HistoryActivity) ========== -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="#161B27"
+        android:paddingHorizontal="16dp">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Quay lại"
+            android:src="@drawable/ic_back"
+            android:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:fontFamily="sans-serif-medium"
+            android:text="Thông tin kỹ thuật"
+            android:textColor="#FFFFFF"
+            android:textSize="17sp" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_dark"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="THÔNG TIN KỸ THUẬT"
+                android:textColor="@color/text_main"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp"
+                android:layout_gravity="center_horizontal"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_dark"
+            app:cardCornerRadius="12dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="THÔNG SỐ BMS"
+                    android:textColor="@color/accent_cyan"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp"/>
+                    
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,3"> 
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Điện áp:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_bms_volt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dòng điện:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_bms_current" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pin (SOC):" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_bms_soc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Ah hiện tại:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_bms_ah" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Chu kỳ sạc:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_bms_cycle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tổng Ah xả:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_bms_abs_ah" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Điện trở xả:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_bms_resistor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lỗi BMS:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_bms_error" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Trạng thái:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_bms_charge" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_dark"
+            app:cardCornerRadius="12dp">
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NHIỆT ĐỘ HỆ THỐNG"
+                    android:textColor="@color/accent_cyan"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="12dp"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,3"
+                    android:layout_marginBottom="8dp">
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Động cơ:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_temp_motor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ECU:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_temp_ecu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FET (BMS):" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_temp_fet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="BMS (TB):" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_temp_bms_avg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                    </TableRow>
+                </TableLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/divider_color" android:layout_marginVertical="8dp"/>
+                
+                <TextView 
+                    android:layout_width="wrap_content" 
+                    android:layout_height="wrap_content" 
+                    android:text="CHI TIẾT CẢM BIẾN PIN (NTC)" 
+                    android:textColor="@color/text_sub" 
+                    android:textSize="12sp" 
+                    android:layout_marginBottom="8dp"/>
+                
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,3">
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NTC 1:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_temp_ntc1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NTC 2:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_temp_ntc2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NTC 3:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_temp_ntc3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NTC 4:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_temp_ntc4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textStyle="bold" android:textSize="14sp"/>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            app:cardBackgroundColor="@color/card_dark"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ĐIỆN ÁP CELL PIN"
+                    android:textColor="@color/accent_cyan"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:id="@+id/tv_cell_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_sub"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="8dp"/>
+                <GridLayout
+                    android:id="@+id/grid_cells"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="4"
+                    android:alignmentMode="alignBounds"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/card_dark"
+            app:cardCornerRadius="12dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VẬN HÀNH &amp; PCB"
+                    android:textColor="@color/accent_cyan"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="8dp"/>
+                
+                <TextView
+                    android:id="@+id/tv_warning_throttle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:padding="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:visibility="gone"/>
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="1,3">
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tên xe:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_pcb_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Firmware:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_pcb_fw" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Số khung:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_pcb_vin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:layout_span="3" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ODO:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_pcb_odo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lỗi PCB:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_pcb_error" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tay ga:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_pcb_throttle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ADC1:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_pcb_adc1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+
+                    <TableRow android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ADC2:" android:textColor="@color/text_sub" android:textSize="13sp"/>
+                        <TextView android:id="@+id/tv_pcb_adc2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>                        
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tự động tắt:" android:textColor="@color/text_sub" android:textSize="13sp" android:layout_marginStart="12dp"/>
+                        <TextView android:id="@+id/tv_pcb_idle_off" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="6dp" android:textColor="@color/text_main" android:textSize="14sp" android:textStyle="bold"/>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

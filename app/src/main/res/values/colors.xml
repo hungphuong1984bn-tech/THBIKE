@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_dark">#0D0D0D</color>
+    <color name="card_dark">#1A1A1A</color>
+
+    <color name="orange_main">#FF8C00</color>
+    <color name="orange_light">#FFA726</color>
+
+    <color name="green_speed">#00E676</color>
+    <color name="red_speed">#FF3D00</color>
+
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#AAAAAA</color>
+    </resources>

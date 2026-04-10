@@ -1,0 +1,15 @@
+<resources>
+    <!-- Theme chính: Dark, không có ActionBar, KHÔNG full screen edge-to-edge -->
+    <style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#1A9B59</item>
+        <item name="colorPrimaryDark">#0F1117</item>
+        <item name="colorAccent">#1A9B59</item>
+        <item name="android:statusBarColor">#0F1117</item>
+        <item name="android:navigationBarColor">#0F1117</item>
+        <!-- Tắt edge-to-edge: nội dung KHÔNG vẽ sau thanh hệ thống -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">false</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+</resources>

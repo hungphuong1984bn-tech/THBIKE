@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.du.dtc.bike' 
+    compileSdk 35 // Android 14 mới nhất
+
+    defaultConfig {
+        applicationId "com.du.dtc.bike"
+        minSdk 24 // Hỗ trợ từ Android 7 trở lên
+        targetSdk 35
+        versionCode 7
+        versionName "1.0.0"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }        
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }    
+
+    signingConfigs {
+        release {
+            // Bạn có thể dùng chung file debug.keystore để test cho tiện
+            // Hoặc trỏ đến file .jks chính thức của bạn
+            storeFile file(System.getProperty("user.home") + "/.android/debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true // Phải bật cái này để Gradle sinh file BuildConfig
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "MY_DEBUG_FLAG", "true"
+            buildConfigField "boolean", "ENABLE_DEVELOP_FEATURE", "true"
+            minifyEnabled false
+            signingConfig signingConfigs.release 
+        }
+
+        staging {
+            buildConfigField "boolean", "MY_DEBUG_FLAG", "true"
+            buildConfigField "boolean", "ENABLE_DEVELOP_FEATURE", "false"
+            minifyEnabled true
+            shrinkResources true
+            // Gọi cấu hình release đã khai báo ở trên
+            signingConfig signingConfigs.release 
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+        }
+
+        release {
+            buildConfigField "boolean", "MY_DEBUG_FLAG", "true" 
+            buildConfigField "boolean", "ENABLE_DEVELOP_FEATURE", "false"
+            
+            minifyEnabled true
+            shrinkResources true
+            
+            signingConfig signingConfigs.release 
+            
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            debuggable false
+        }
+    }
+    
+    // Ép dùng chuẩn Java 21
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+// Khai báo cho Gradle biết cách build thư viện C
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+        }
+    }    
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // Room Database
+    def room_version = "2.6.1"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // MPAndroidChart — Thư viện vẽ biểu đồ
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+}
