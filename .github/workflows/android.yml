@@ -33,3 +33,5 @@ jobs:
         with:
           name: apk
           path: "**/*.apk"
+          - name: Test Gradle
+  run: ./gradlew tasks
