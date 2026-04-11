@@ -16,7 +16,8 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - run: chmod +x gradlew
+      - name: Grant permission
+        run: chmod +x gradlew
 
       - name: Show modules
         run: ./gradlew projects
