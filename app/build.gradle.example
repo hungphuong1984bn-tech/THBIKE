@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace "com.thbike.app"   // QUAN TRỌNG (AGP 8+ bắt buộc)
+    namespace "com.thbike.app"
 
     compileSdk 34
 
@@ -16,68 +16,15 @@ android {
         versionName "1.0"
     }
 
-
-
-    signingConfigs {
-        release {
-            // Bạn có thể dùng chung file debug.keystore để test cho tiện
-            // Hoặc trỏ đến file .jks chính thức của bạn
-            storeFile file(System.getProperty("user.home") + "/.android/debug.keystore")
-            storePassword "android"
-            keyAlias "androiddebugkey"
-            keyPassword "android"
-        }
-    }
-
-    buildFeatures {
-        buildConfig = true // Phải bật cái này để Gradle sinh file BuildConfig
-    }
-
     buildTypes {
         debug {
-            buildConfigField "boolean", "MY_DEBUG_FLAG", "true"
-            buildConfigField "boolean", "ENABLE_DEVELOP_FEATURE", "true"
-            minifyEnabled false
-            signingConfig signingConfigs.release 
+            debuggable true
         }
-
-        staging {
-            buildConfigField "boolean", "MY_DEBUG_FLAG", "true"
-            buildConfigField "boolean", "ENABLE_DEVELOP_FEATURE", "false"
-            minifyEnabled true
-            shrinkResources true
-            // Gọi cấu hình release đã khai báo ở trên
-            signingConfig signingConfigs.release 
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            debuggable false
-        }
-
         release {
-            buildConfigField "boolean", "MY_DEBUG_FLAG", "true" 
-            buildConfigField "boolean", "ENABLE_DEVELOP_FEATURE", "false"
-            
-            minifyEnabled true
-            shrinkResources true
-            
-            signingConfig signingConfigs.release 
-            
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            debuggable false
+            minifyEnabled false
+            shrinkResources false
         }
     }
-    
-    // Ép dùng chuẩn Java 21
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-
-// Khai báo cho Gradle biết cách build thư viện C
-    externalNativeBuild {
-        cmake {
-            path "src/main/cpp/CMakeLists.txt"
-        }
-    }    
 }
 
 dependencies {
