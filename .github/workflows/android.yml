@@ -16,14 +16,19 @@ jobs:
           distribution: temurin
           java-version: 17
 
+      - name: Check files
+        run: ls -la
+
       - name: Grant permission
         run: chmod +x gradlew
 
-      - name: Show modules
-        run: ./gradlew projects
+      - name: Test Gradle
+        run: ./gradlew tasks
 
       - name: Build APK
-        run: ./gradlew assembleDebug --stacktrace
+        run: |
+          ./gradlew clean
+          ./gradlew assembleDebug --stacktrace
 
       - name: Find APK
         run: find . -name "*.apk"
@@ -33,5 +38,3 @@ jobs:
         with:
           name: apk
           path: "**/*.apk"
-          - name: Test Gradle
-  run: ./gradlew tasks
