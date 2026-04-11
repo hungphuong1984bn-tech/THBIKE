@@ -3,23 +3,25 @@ plugins {
 }
 
 android {
-    namespace 'com.du.dtc.bike' 
-    compileSdk 35 // Android 14 mới nhất
+    namespace "com.thbike.app"   // QUAN TRỌNG (AGP 8+ bắt buộc)
+
+    compileSdk 34
 
     defaultConfig {
-        applicationId "com.du.dtc.bike"
-        minSdk 24 // Hỗ trợ từ Android 7 trở lên
-        targetSdk 35
-        versionCode 7
-        versionName "1.0.0"
-        ndk {
-            abiFilters "armeabi-v7a", "arm64-v8a"
-        }        
+        applicationId "com.thbike.app"
+        minSdk 21
+        targetSdk 34
+
+        versionCode 1
+        versionName "1.0"
     }
 
-    buildFeatures {
-        buildConfig = true
-    }    
+    buildTypes {
+        debug {
+            debuggable true
+        }
+    }
+}
 
     signingConfigs {
         release {
