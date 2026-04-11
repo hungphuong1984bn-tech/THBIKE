@@ -2,7 +2,8 @@ name: Build APK
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -12,32 +13,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup JDK 17
+      - name: Setup JDK
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
 
-      - name: Show files
-        run: ls -la
-
       - name: Grant permission
         run: chmod +x gradlew || true
 
-      - name: Generate wrapper if missing
-        run: |
-          if [ ! -f gradlew ]; then
-            echo "No gradlew found, installing gradle..."
-            sudo apt-get update
-            sudo apt-get install -y gradle
-            gradle wrapper
-          fi
+      - name: Show modules
+        run: ./gradlew projects
 
-      - name: Check Gradle
-        run: ./gradlew tasks
+      - name: Build APK
+        run: ./gradlew :app:assembleDebug --stacktrace --info
 
-     - name: Build APK
-  run: ./gradlew :app:assembleDebug --stacktrace --info
       - name: Find APK
         run: find . -name "*.apk"
 
