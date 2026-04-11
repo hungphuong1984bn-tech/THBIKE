@@ -36,9 +36,8 @@ jobs:
       - name: Check Gradle
         run: ./gradlew tasks
 
-      - name: Build APK
-        run: ./gradlew assembleDebug --stacktrace
-
+     - name: Build APK
+  run: ./gradlew :app:assembleDebug --stacktrace --info
       - name: Find APK
         run: find . -name "*.apk"
 
